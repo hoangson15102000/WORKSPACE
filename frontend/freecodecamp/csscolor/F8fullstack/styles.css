@@ -1,0 +1,18 @@
+h1 {
+    color: yellow;
+}
+.one {
+    color: cyan;
+}
+#heading-id {
+    color: violet;
+}
+#heading-id {
+    color: red;
+}
+h1#heading-id.one{
+    color:blue;
+}
+* {
+color: red;
+}

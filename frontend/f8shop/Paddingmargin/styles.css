@@ -1,0 +1,49 @@
+.box{
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.box1{
+    background-color:  rgba(193, 207, 33, 0.478);
+    background-image: linear-gradient(rgb(255, 255, 255),black);
+    padding: 16px;
+    width: 100px;
+    height: 100px;
+    color: black;
+    font: Tahoma;
+    border: 210px solid #333;
+    box-sizing: border-box;
+
+
+}
+.box2{
+    background-color:  rgba(193, 207, 33, 0.478);
+    background-image: linear-gradient(rgb(255, 255, 255),red);
+    padding: 16px;
+    width: 100px;
+    height: 100px;
+    color: black;
+    font: Tahoma;
+    border: 2px solid #333;
+    box-sizing: border-box;
+
+}
+.box3{
+    background-color:  rgba(193, 207, 33, 0.478);
+    background-image: linear-gradient(rgb(255, 255, 255),violet);
+    padding: 16px;
+    width: 100px;
+    height: 100px;
+    color: black;
+    font: Tahoma;
+    border: 2px solid #333;
+    box-sizing: border-box;
+
+}
+a::after{
+    content:"("attr(href)")"
+}

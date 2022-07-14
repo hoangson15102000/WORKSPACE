@@ -1,0 +1,13 @@
+body{
+    width: 100%;
+    height: 100vh;
+    
+    background-image: url(https://static.fullstack.edu.vn/static/media/f8-og-image.245ebc1d5d7a5240254c.png);
+background-repeat: no-repeat;
+background-size: 100%;
+border: 20px dashed #ccc;
+padding: 20px;
+box-sizing: border-box;
+background-origin:content-box;
+background-position: top 20px right 20px;
+}
