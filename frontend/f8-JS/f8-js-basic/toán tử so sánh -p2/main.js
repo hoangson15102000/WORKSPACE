@@ -14,6 +14,7 @@ console.log(a === b) //  so sánh tuyejt đối nha , so sánh cả datatype
 var c = 1;
 var d = 2;
 var result = c < d && a < 0;
-console.log(result)
+console.log(result);
+
 
 
