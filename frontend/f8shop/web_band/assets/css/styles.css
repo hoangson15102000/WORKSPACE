@@ -328,3 +328,30 @@ li {
     color: #000;
     background-color: #ccc;
 }
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container {
+    background: #fff;
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: 900px;
+    min-height: 200px;
+}
+
+.button-close {
+    width: 83.5px;
+    height: ;
+}
