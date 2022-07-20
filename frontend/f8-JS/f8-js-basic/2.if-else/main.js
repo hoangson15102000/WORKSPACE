@@ -2,8 +2,17 @@
 var isSuccess = true;
 console.log(isSuccess);
 var a = 1;
-var b = 2;
+var b = 0;
 var c = -1;
+var d = null;
+typeof (d);
+let foo;
+console.log(typeof foo);
+console.log('is undefined?', foo === undefined);
+// is undefined? true
+function foo1() { return 'hello'; }
+console.log('is undefined?', foo1() === undefined);
+// is undefined? true
 var isSuccess = a > b;
 console.log(isSuccess);
 // câu lệnh điều kiện if và else

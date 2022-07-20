@@ -16,7 +16,7 @@ function showDialog() {
     alert('Hi xin chào các bạn')
 }
 // showDialog()
-// Tham số arguments trong hàm 
+// đối số arguments trong hàm 
 // tính private
 function writeLog(message) {
     console.log(message)
@@ -55,13 +55,19 @@ console.log(result)
 //  mỘt số điều cần biết vê function các hàm sau sẽ ghi đè lên 
 // một biến được xác định tròn hàm thì chỉ trong hàm mà thôi nhé các bạn
 // Các loại function
-// 1. Declaration function
-// 2. Expression function
+// 1. Declaration function phai dat ten
+// 2. Expression function k can dat ten không thể gọi trước khi được định nghía
 // 3. Arrow function
 
 function showMessage() {
     // declaration function
+    console.log(" declaration function")
 }
 var showMessage2 = function () {
     // expression function
+    console.log(' // expression function')
 }
+showMessage(
+
+)
+showMessage2()
