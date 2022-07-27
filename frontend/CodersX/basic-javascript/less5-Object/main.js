@@ -20,3 +20,14 @@ myDog['isAlive'] = true;
 
 console.log(myDog['isAlive'])
 console.log(myDog)
+
+// var a = {
+//     // 
+// }
+
+// var myDog = {
+//     name: 'Lợn',
+//     weight: 5.2,
+//     isAlive: false,
+
+// }

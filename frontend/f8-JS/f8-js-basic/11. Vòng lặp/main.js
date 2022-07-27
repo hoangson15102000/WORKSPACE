@@ -22,6 +22,19 @@ var dodaimang = myArray.length;
 for (var j = 0; j < dodaimang; j++) {
     console.log(myArray[j]);
 }
+// ôn lại ví dụ vòng lặp for
+console.log('// ôn lại ví dụ vòng lặp for')
+var arr = [
+    'son',
+    'hoang',
+    'nguyen',
+    'nam',
+]
+var lengthmang = arr.length;
+for (let k = 0; k < lengthmang; k++) {
+    console.log(arr[k]);
+}
+console.log('// ôn lại ví dụ vòng lặp for')
 // Vòng lặp for in part 2
 console.log('// Vòng lặp for in part 2')
 
@@ -47,7 +60,7 @@ console.log(' Vòng lặp for of  parrt 3')
 
 var language = 'Javascript';
 for (var value of language) {
-    console.log(value)
+    // console.log(value)
 }
 console.log(Object.keys(myInfo))
 for (var value of Object.keys(myInfo)) {

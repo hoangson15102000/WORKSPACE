@@ -25,7 +25,7 @@ var languages = [
     {}
 ];
 console.log(languages)
-console.log(languages[2]) //index danh tu dong tu 0 truy xuat ra theo index
+console.log(languages[1]) //index danh tu dong tu 0 truy xuat ra theo index
 
 var languagesn = new Array('JS',
     'PHP',
@@ -39,7 +39,7 @@ var languagesn = new Array('JS',
 console.log(languagesn);
 console.log(typeof languages)
 //{} object [] array cung tra ve object
-console.log(Array.isArray(languages))
+console.log(Array.isArray(languages)) // kiểm tra xem có phải một mảng hay không ?
 // LÀM VIỆC VỚI MẢNG - PART2 - ARRAY
 console.log('LÀM VIỆC VỚI MẢNG - PART2');
 var language = [
@@ -53,29 +53,33 @@ console.log(language)
  *1. to string bien doi thanh chuoi string
  */
 
+
 console.log(language.toString())
 console.log(typeof language.toString())
 //2. join 
-console.log(language.join(' add ')) // đã học biến chuỗi thành array thì dùng split còn array về chuỗi thì dùng join đó cu
+console.log(language.join(' + ')) // đã học biến chuỗi thành array thì dùng split còn array về chuỗi thì dùng join đó cu
 // nếu truyền vào chuỗi rỗng ' ' nó sẽ hiểu là thêm vào giữa các string
 
 // 3.pop Xóa đi phần tử cuối mảng và trả lại chính phần tử đã xóa đó
 console.log(language.pop())
+console.log(language.pop())
 console.log(language);
 
 //4. push để THÊM phần tử vào cuối mảng 1 hoặc nhiều phần tử và trả về độ dài mới của mảng
-console.log(language.push('Dart', 'Java'));
+console.log(language.push('Dart', 'PYTHON'));
 console.log(language);
 //5.shift xóa đi phần tử đầu mảng và trả về phần tử đã xóa
-console.log(language.shift())
+console.log(language.shift());
+console.log(language.shift());
 console.log(language);
 //6.unshift thêm một hoặc nhiều phần tử vào đầu mảng và trả về độ dài mới của mảng
-console.log(language.unshift('NHS'))
+console.log(language.unshift('NHS'));
 console.log(language);
+console.log('//7. splicing xóa cắt hoặc chèn phần tử mới vào mảng')
 //7. splicing xóa cắt hoặc chèn phần tử mới vào mảng
-console.log(language.splice(1, 1))
+console.log(language.splice(1, 2));
 console.log(language);
-console.log(language.splice(1, 0, 'dart'))
+console.log(language.splice(1, 0, 'sol1'))
 console.log(language);
 //tham số thứ 1 đặt vào đâu tham số thứ 2 xóa mấy phần tử :<
 //8.concat để nối array

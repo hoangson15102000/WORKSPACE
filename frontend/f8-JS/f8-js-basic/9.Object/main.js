@@ -31,15 +31,16 @@ console.log(myInfo);
 console.log(myInfo.getName());
 // -- phương thức function
 // -- others --> thuộc tính proverty
-// OBJECT CONSTRUCTOR tạo nên baen thiết kế cho đối tượng
+// OBJECT CONSTRUCTOR - xây dựng đối tượng,  tạo nên baen thiết kế cho đối tượng
 console.log(' OBJECT CONSTRUCTOR - xây dựng đối tượng -part2')
 
 function User(firstName, lastName, avatar) {
-    this.firstName = firstName;
+    this.firstName = firstName; // đối tượng đc khởi tạo này sẽ có thuộc tính firstName = tham số firstName truyền vào khi khởi tạo đối tượng
+
     this.lastName = lastName;
     this.avatar = avatar;
     this.getName = function () {
-        return `${this.firstName} ${this.lastName};
+        return `${this.firstName} ${this.lastName};o
         }`
     }
 }
@@ -53,7 +54,8 @@ console.log(author.getName());
 console.log(user);
 author.title = ' Chia sẻ dạo tại F8';
 user.comment = ' Liệu có khóa asp.net không ad'
-// object prototyoe - basic - đối tượng nguyên mẫu 
+// object prototype - basic - đối tượng nguyên mẫu 
+// prototype - khuôn nguyên mẫu 
 console.log('object prototyoe - basic part 3');
 // coi object prototype là nguyên liệu lập nên ngôi nhà
 User.prototype.className = 'F8';

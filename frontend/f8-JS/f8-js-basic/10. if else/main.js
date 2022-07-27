@@ -72,3 +72,27 @@ console.log(result22);
 var a = 3;
 var b = 4;
 var c = a > 0 ? a : b;
+
+var day = 3;
+if (day === 2) {
+    console.log('Hom nay la thu 2')
+}
+else if (day === 3) {
+    console.log('Hom nay la thu 3')
+}
+else if (day === 4) {
+    console.log('Hom nay la thu 4')
+}
+
+var day = 6;
+switch (day) {
+    case 5:
+        console.log('Hom nay T5');
+        break;
+    case 6:
+        console.log('Hom nay t6');
+        break;
+}
+// toán tử 3 ngôi
+var resullt = course.coin > 0 ? course.coin + 'coin' : 'free';
+console.log(resullt);
