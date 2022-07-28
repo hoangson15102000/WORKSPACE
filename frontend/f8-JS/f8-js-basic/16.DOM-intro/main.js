@@ -71,6 +71,31 @@ var heading_all = document.querySelectorAll('.box .heading-2');
 console.log(heading_all); // Nodelist là được coi là 1 mảng
 console.log(heading_all[2])
 
-///html coleection
+///html colection
 console.log(document.forms.testForm);
 console.log(document.anchors);
+
+// Get element methods - 2
+console.log('Get element methods - 2');
+var listItemNodes =
+    document.querySelectorAll('.box-1 li');
+console.log(listItemNodes);
+// c2
+var boxNode = document.querySelector('.box-1');
+// var boxNode2 = boxNode.querySelectorAll('li');
+console.log(boxNode);
+console.log(boxNode.getElementsByTagName('li'));
+// console.log(boxNode.getElementsByTagName('p'));
+console.log('get element method 3');
+// get element method 3
+//getElementById - số ít , console ra element
+//getElementByClassName in ra HTML collection
+// Các HTMLcollection, Nodelist tương tự như 1 mảng , muốn in ra thì xuất index
+
+//getElementByTagName in ra HTML collection
+//querySelector - số ít , console ra element
+//querySelectorAll in console ra Nodelist
+//HTML collection img , a,
+console.log(document.forms[1])
+//document.write
+document.write('Hello')
