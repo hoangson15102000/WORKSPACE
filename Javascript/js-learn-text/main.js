@@ -27,9 +27,9 @@
 // // Toán tử chuỗi - String operator
 // var firstName = 'Son';
 // var lastName = 'Dang';
-var names = 'Son';
-names += ' dang';
-console.log(names)
+// var names = 'Son';
+// names += ' dang';
+// console.log(names)
 
 // console.log(firstName + ' ' + lastName);
 // console.log(lastName)
@@ -41,12 +41,29 @@ console.log(names)
 // >= lớn hơn hoặc bằng
 // <= nhỏ hơn hoặc bằng
 // Ví dụ nhé
-var a = 1;
-var b = 2;
-if (a < b) {
-    console.log('DK dung');
+// var a = 1;
+// var b = 2;
+// if (a < b) {
+//     console.log('DK dung');
 
+// }
+// else {
+//     console.log('DK sai');
+// }
+
+function createPromise() {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            reject({
+                content: "Hello!"
+            })
+        }, 5000)
+    })
 }
-else {
-    console.log('DK sai');
-}
+
+
+createPromise().then((res) => {
+    console.log("response: ", res)
+}).catch((err) => {
+    console.log("error: ", err)
+})
