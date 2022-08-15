@@ -23,4 +23,6 @@ REMOTE
 - git merge : Tong hop lai cac branch
 - git merge {branch name}
 - git branch -d{branch name} xóa branch
-- git push
+- git push day len repo
+
+git remote add origin https://github.com/hoangson15102000/WORKSPACE.git
