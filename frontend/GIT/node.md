@@ -1,8 +1,9 @@
 Repository là kho , thư mục dự án 
 
 La 1 cai kho lu tru thu muc du an.
-Branch : Nhanh , canh cay . 
-conflict: xung dot 
+Branch : Cành , 1 dự án có thể có nhiều cành. Cành mặc định là master.
+conflict: xung đột
+ 
 LOCAL 
 REMOTE
 
@@ -13,7 +14,7 @@ REMOTE
 - git add : lưu lại sự thay đổi của dự án
 - git reset : reset lai
 - git commit: chinh thuc commit len remote repo
-- git log : Xem lai thoi diem chung ta da luu xem nhu the nao
+- git log : Xem lại thời điểm chúng ta đã lưu như nào
 - git log --oneline : Xem thoi diem nhung 1 dong thoi :)
 - git checkout: 
 - git checkout {branch name}
@@ -21,5 +22,5 @@ REMOTE
 - git checkout -b {branch name}
 - git merge : Tong hop lai cac branch
 - git merge {branch name}
-- git branch -d{branch name}
+- git branch -d{branch name} xóa branch
 - git push
