@@ -8,6 +8,12 @@
 
 }
 
+.invalid {
+    color: red;
+    border-color: #f33a58;
+    font-size: 13px;
+}
+
 .header {
     height: 64px;
     width: 100%;
@@ -22,6 +28,10 @@
     z-index: 2;
     background-color: #fff;
 
+}
+
+.form-message {
+    display: block;
 }
 
 .logo-button {

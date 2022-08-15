@@ -10,23 +10,24 @@ function countDown(num) {
         console.log(num)
         return countDown(num - 1);
     }
+    return num;
 }
 countDown(5);
 
 // functional programing - lập trình hướng hàm !!
 // 1. Xác định được điểm dừng
 // 2. logic handle => tạo ra điểm dừng
-function loop(start, end, cb) {
-    if (start <= end) {
-        cb(start)
-        return loop(start + 1, end, cb);
+function loop(sobatdau, end, cb) {
+    if (sobatdau <= end) {
+        cb(sobatdau)
+        return loop(sobatdau + 1, end, cb);
     }
 
 }
 var array = ['js', 'php', 'ruby'];
-loop(0, array.length - 1, function (index) {
-    console.log('index :', index);
-    console.log(array[index]);
+loop(0, array.length - 1, function (i) {
+    console.log('index  :', i);
+    console.log(array[i]);
 });
 // Vi du tinh giai thua
 function giaithua(nums) {
