@@ -3,7 +3,7 @@ function Validator(options) {
     if (formElement) {
         options.rules.forEach((rule) => {
             var inputElement = formElement.querySelector(rule.selector);
-            // console.log(rule.selector)
+            console.log(rule.selector)
             // console.log(inputElement)
             if (inputElement) {
                 inputElement.onblur = function () {
