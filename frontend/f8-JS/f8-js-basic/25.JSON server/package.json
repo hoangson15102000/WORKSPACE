@@ -1,14 +1,14 @@
 {
-  "name": "clear",
+  "name": "25.json-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "main.js",
   "scripts": {
     "start": "json-server --watch db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "json-server": "^0.17.0"
   }
