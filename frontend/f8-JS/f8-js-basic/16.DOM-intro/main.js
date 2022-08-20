@@ -10,7 +10,7 @@
 // Node - điểm giao nhau // element/attribute/text
 // core dom - tất cả các tài liệu. html dom dựa trên core dom
 //HTML DOM và DOM API
-
+// DOM được dùng để truy xuất và thao tác các tài liệu có cấu trúc dạng HTML hay XML bằng các ngôn ngữ lập trình như JS.
 /**
  1. Element
  2. Attribute

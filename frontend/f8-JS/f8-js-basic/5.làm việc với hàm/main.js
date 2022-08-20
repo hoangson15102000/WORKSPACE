@@ -18,8 +18,8 @@ function showDialog() {
 // showDialog()
 // đối số arguments trong hàm 
 // tính private
-function writeLog(message) {
-    console.log(message)
+function writeLog(Đâylàthamsố) {
+    console.log(Đâylàthamsố);
 }
 writeLog('Dcm');// 'Dcm' là đối số 
 function writeLog1() {
