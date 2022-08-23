@@ -12,14 +12,14 @@ function Validator(options) {
                     inputElement.oninput = function () {
                         var errorElement = inputElement.parentElement.querySelector('.form-message');
                         errorElement.innerText = '';
-                        inputElement.parentElement.classList.remove('invalid');
+    inputElement.parentElement.classList.remove('invalid');
                     }
-
                 }
             }
         })
     }
 }
+
 function validate(inputElement, rule) {
     var errorMessage = rule.test(inputElement.value);
     var errorElement = inputElement.parentElement.querySelector('.form-message')

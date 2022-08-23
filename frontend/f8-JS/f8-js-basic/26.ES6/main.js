@@ -83,3 +83,50 @@ logger1('Message ...');
 
 
 /// Enhanced object literals
+// định nghĩa key value cho objects
+// định nghĩa method cho objects
+// định nghĩa key cho object dưới dạng biến
+
+
+var name = 'JS';
+var price = 1000;
+var course = {
+    name,
+    price,
+    // getName: function () {
+    //     return this.name;
+    // }
+    getName() {
+        return this.name;
+    }
+}
+
+console.log(course);
+console.log(course.getName());
+
+var fieldName = 'name';
+var fieldPrice = 'price';
+const courseaaa = {
+    [fieldName]: 'Js',
+    [fieldPrice]: 10000
+
+}
+console.log(courseaaa)
+
+/// Destructuring phân rã với object array
+var newArr = ['Javascript', 'PHp', 'Ruby'];
+var [aa, bb, cc] = newArr;
+console.log(bb, cc, aa);
+var [aa, ...rest] = newArr;
+console.log(rest);
+
+//object
+var khoahoc = {
+    ten: 'JSSS',
+    gia: 10000,
+    children: {
+        ten: 'Reactjs'
+    }
+}
+var { ten: parentname, gia, children: { ten }, description1 = 'default des value' } = khoahoc;
+console.log(ten, gia, description1)

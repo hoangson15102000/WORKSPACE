@@ -1,0 +1,14 @@
+{
+    "editor.fontSize": 13,
+    "editor.tabSize": 15,
+    "launch": {
+    
+        "configurations": [],
+        "compounds": []
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+// {
+//     "editor.formatOnSave":true,
+//     "editor.defaultFormatter":"esbenp.prettier-vscode"
+// }

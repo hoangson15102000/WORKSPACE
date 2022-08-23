@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener</title>
+</head>
+
+<body>
+    <input type="text" id="input-id" value="">
+    <div id="result"></div>
+    <script>
+        var input = document.getElementById('input-id');
+        var buttonElement = document.getElementById('btn-id')
+        // them su kien cho doi tuong
+        input.addEventListener('keyup', function () {
+            document.getElementById('result').innerHTML = input.value;
+        })
+        // check
+        input.addEventListener('keyup', function () {
+            if (input.value.length > 5) {
+
+                alert('Ban da nhap nhieu hon 5 ky tu')
+            }
+        })
+    </script>
+</body>
+
+<!-- <body>
+    <input type="text" id="txt-val" value="" />
+    <div id="result"></div>
+    <script language="javascript">
+        // Lấy đối tượng
+        var input = document.getElementById("txt-val");
+
+        // Thêm sự kiện cho đối tượng
+        input.addEventListener('keyup', function () {
+            // Gán giá trị vào div
+            document.getElementById('result').innerHTML = input.value;
+        });
+
+        // Bổ sung hành động nữa
+        input.addEventListener('keyup', function () {
+            if (input.value.length > 5) {
+                alert("Bạn đã nhập nhiều hơn 5 ký tự");
+            }
+        });
+    </script>
+</body> -->
+
+</html>

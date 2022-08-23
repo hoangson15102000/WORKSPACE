@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap"
         rel="stylesheet">
+    <script src="main.js"></script>
     <title>Entrade Trading</title>
 </head>
 
@@ -64,10 +65,10 @@
                                 <path
                                     d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
                                 </path>
-                            </svg>
+                </svg>
 
                             <input id="email"
-                                style="margin:0;padding:0;border:0;background: transparent; height: 26px;width: 360px;;position:relative; top:-10px;"
+                                style="margin:0;padding:0;border:0;background: transparent; height: 26px;width: 360px;"
                                 name="email" type="email" value="">
                             <span class="form-message"></span>
                         </div>
@@ -85,10 +86,10 @@
                                     d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z">
                                 </path>
                             </svg>
-
-                            <input id="'"
-                                style="margin:0;padding:0;border:0;background: transparent; height: 26px;width: 360px;;position:relative; top:-10px;"
+                            <input id="password"
+                                style="margin:0;padding:0;border:0;background: transparent; height: 26px;width: 360px;"
                                 name="password" type="password" value="">
+                            <span class="form-message"></span>
                         </div>
                     </div>
                     <div style="width: 385px;height: 1.5px; background-color: rgb(128, 0, 0);">
@@ -102,11 +103,60 @@
                         <div class="box2"><a class="" id="register-btn" href="/dang-ky">Đăng
                                 ký</a></div>
                     </div>
-                    <button class="button" tabindex="-1" type="submit" disabled="" id="login-btn"
+                    <button class="button-login"  tabindex="-1" type="button" onclick="funcClick()" id="login-btn"
                         aria-label="login-btn"
-                        style="opacity: 0.5; background: rgb(128, 0, 0); width: 100%; color: rgb(255, 255, 255); margin-top: 30px; height: 50px; border-radius: 6px;"><span
-                            class="MuiButton-label"><span style="line-height: 0; font-size: 14px; ">ĐĂNG
+                        style="opacity:; background: rgb(128, 0, 0); width: 100%; color: rgb(255, 255, 255); margin-top: 30px; height: 50px; border-radius: 6px;"><span
+                            class="" ><span style="line-height: 0; font-size: 14px; ">ĐĂNG
                                 NHẬP</span></span></button>
+                                <style>
+                                    .btn-add{
+
+                                    }
+                                </style>
+                    <script>
+                    var emailElement = document.getElementById('email');
+                        var emailValue = emailElement.value;
+                            var passwordElement = document.getElementById('password');
+                            var passwordValue = passwordElement.value;
+                    if(emailValue !== '' && passwordValue !== '') {
+                        document.getElementById("login-btn").disabled = false;
+                    }
+                    else{document.getElementById("login-btn").disabled = true;}
+                    function funcClick() {
+                            var emailElement = document.getElementById('email');
+                            var emailValue = emailElement.value;
+                            console.log(typeof emailValue);
+                            var passwordElement = document.getElementById('password');
+                            var passwordValue = passwordElement.value;
+                            var myApi = 'https://services.entrade.com.vn/entrade-api/v2/auth';
+                            var options = {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ "password": passwordValue, "username": emailValue })
+                            }
+                            function Redirect() {
+               window.location="http://127.0.0.1:5500/frontend/test/test.html";
+            }
+            function Redirectfail() {
+               window.location="http://127.0.0.1:5500/frontend/test/error.html";
+            }
+                            fetch(myApi, options)
+                                .then(
+                                    function(responsive){
+                                        if(responsive.status !==200){
+                                            Redirectfail()
+                                        }
+                                        else{Redirect()
+
+                                        }
+                                    }
+                                )
+                                .catch();
+
+
+                        }</script>
                 </div>
             </form>
         </div>
@@ -195,7 +245,6 @@
             form: '#form-1',
             errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#fullname'),
                 Validator.isEmail('#email'),
                 // Validator.isRequired('#password'),
                 Validator.minLength('#password', 6),

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add item</title>
+</head>
+
+<body>
+    <input id="input-item" type="text">
+    <button id="btn-item" onclick="addItem()">ADD</button>
+    <ul id="ul-item">
+
+    </ul>
+    <script>
+        var myList = [];
+        function addItem() {
+            // get value
+            var input = document.getElementById('input-item');
+            var valueInput = input.value;
+            // add to array
+            myList.push(valueInput);
+            render()
+            input.value = ''
+
+        }
+
+        function render() {
+            var htmls = document.getElementById('ul-item');
+            var content = myList.map(function (item) {
+                return `<li>${item}</li>`
+            })
+            htmls.innerHTML = content.join('');
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO list
+
+    </title>
+</head>
+
+<body>
+    <input id="new-item" type="text">
+    <button id="add-btn">ADD</button>
+    <ul id="todo-list"></ul>
+    <script type='text/javascript'>
+        var todoList = [
+
+        ];
+        var addBtn = document.getElementById('add-btn');
+        // addBtn.onclick = addItem;
+        addBtn.addEventListener('click', addItem);
+        // click event is trigged
+        addBtn.addEventListener('click', function () {
+            alert('hello');
+        });
+        function addItem() {
+            // get value from input
+            var input = document.getElementById('new-item');
+            var newItem = input.value;
+            // add to todoList array
+            todoList.push(newItem);
+            //re-render
+            render();
+            //clear input
+            input.value = '';
+        }
+        function render() {
+            var htmlList = document.getElementById('todo-list');
+            var content = todoList.map(function (item) {
+                return `<li>${item}</li>`;
+
+            })
+            htmlList.innerHTML = content.join('');
+        }
+    </script>
+</body>
+
+</html>
