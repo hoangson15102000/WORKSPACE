@@ -103,28 +103,46 @@
                         <div class="box2"><a class="" id="register-btn" href="/dang-ky">Đăng
                                 ký</a></div>
                     </div>
-                    <button class="button-login"  tabindex="-1" type="button" onclick="funcClick()" id="login-btn"
+                    <button class="button-login"  tabindex="-1"  type="button" onclick="funcClick()"  id="login-btn"
                         aria-label="login-btn"
                         style="opacity:; background: rgb(128, 0, 0); width: 100%; color: rgb(255, 255, 255); margin-top: 30px; height: 50px; border-radius: 6px;"><span
                             class="" ><span style="line-height: 0; font-size: 14px; ">ĐĂNG
                                 NHẬP</span></span></button>
                                 <style>
-                                    .btn-add{
-
-                                    }
                                 </style>
                     <script>
+                        var obj = document.getElementById('login-btn');
+                        obj.addEventListener('change',function change(){
+                        var emailElement = document.getElementById('email');
+                        var emailValue = emailElement.value;
+                            var passwordElement = document.getElementById('password');
+                            var passwordValue = passwordElement.value;
+                        if(emailValue !== '' && passwordValue !== '') {
+                        document.getElementById("login-btn").disabled = false;
+                    }
+                    else{document.getElementById("login-btn").disabled = true;} 
+                    }
+                   );
                     var emailElement = document.getElementById('email');
                         var emailValue = emailElement.value;
                             var passwordElement = document.getElementById('password');
                             var passwordValue = passwordElement.value;
-                    if(emailValue !== '' && passwordValue !== '') {
+                    function change(){
+                        var emailElement = document.getElementById('email');
+                        var emailValue = emailElement.value;
+                            var passwordElement = document.getElementById('password');
+                            var passwordValue = passwordElement.value;
+                        if(emailValue !== '' && passwordValue !== '') {
                         document.getElementById("login-btn").disabled = false;
                     }
-                    else{document.getElementById("login-btn").disabled = true;}
+                    else{document.getElementById("login-btn").disabled = true;} 
+                    }
+                   
                     function funcClick() {
                             var emailElement = document.getElementById('email');
                             var emailValue = emailElement.value;
+                            var Tendangnhap = 'Tendangnhap';
+                            var Matkhau = 'matkhau';
                             console.log(typeof emailValue);
                             var passwordElement = document.getElementById('password');
                             var passwordValue = passwordElement.value;
@@ -137,6 +155,8 @@
                                 body: JSON.stringify({ "password": passwordValue, "username": emailValue })
                             }
                             function Redirect() {
+                                localStorage.setItem(Tendangnhap, emailValue);
+                                localStorage.setItem(Matkhau, passwordValue);
                window.location="http://127.0.0.1:5500/frontend/test/test.html";
             }
             function Redirectfail() {
