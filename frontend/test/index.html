@@ -69,7 +69,7 @@
 
                             <input id="email"
                                 style="margin:0;padding:0;border:0;background: transparent; height: 26px;width: 360px;"
-                                name="email" type="email" value="">
+                                name="email" type="email" value="" onchange = 'change()'>
                             <span class="form-message"></span>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                             </svg>
                             <input id="password"
                                 style="margin:0;padding:0;border:0;background: transparent; height: 26px;width: 360px;"
-                                name="password" type="password" value="">
+                                name="password" type="password" value="" onchange = 'change()'>
                             <span class="form-message"></span>
                         </div>
                     </div>
@@ -111,33 +111,32 @@
                                 <style>
                                 </style>
                     <script>
-                        var obj = document.getElementById('login-btn');
-                        obj.addEventListener('change',function change(){
-                        var emailElement = document.getElementById('email');
-                        var emailValue = emailElement.value;
-                            var passwordElement = document.getElementById('password');
-                            var passwordValue = passwordElement.value;
+                        // var obj = document.getElementById('email');
+                        // var obj2 = document.getElementById('password');
+                //         obj2.addEventListener('change',function change(){
+                //         if(emailValue !== '' && passwordValue !== '') {
+                //         document.getElementById("login-btn").disabled = false;
+                //     }
+                //     else{document.getElementById("login-btn").disabled = true;} 
+                //     }
+                //    );
+                //         obj.addEventListener('change',function change(){
+                //         if(emailValue !== '' && passwordValue !== '') {
+                //         document.getElementById("login-btn").disabled = false;
+                //     }
+                //     else{document.getElementById("login-btn").disabled = true;} 
+                //     }
+                //    );
+                function change(){
                         if(emailValue !== '' && passwordValue !== '') {
                         document.getElementById("login-btn").disabled = false;
                     }
                     else{document.getElementById("login-btn").disabled = true;} 
                     }
-                   );
                     var emailElement = document.getElementById('email');
                         var emailValue = emailElement.value;
                             var passwordElement = document.getElementById('password');
                             var passwordValue = passwordElement.value;
-                    function change(){
-                        var emailElement = document.getElementById('email');
-                        var emailValue = emailElement.value;
-                            var passwordElement = document.getElementById('password');
-                            var passwordValue = passwordElement.value;
-                        if(emailValue !== '' && passwordValue !== '') {
-                        document.getElementById("login-btn").disabled = false;
-                    }
-                    else{document.getElementById("login-btn").disabled = true;} 
-                    }
-                   
                     function funcClick() {
                             var emailElement = document.getElementById('email');
                             var emailValue = emailElement.value;
