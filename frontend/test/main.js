@@ -1,3 +1,6 @@
+
+
+
 function Validator(options) {
     var formElement = document.querySelector(options.form);
     if (formElement) {
@@ -12,7 +15,7 @@ function Validator(options) {
                     inputElement.oninput = function () {
                         var errorElement = inputElement.parentElement.querySelector('.form-message');
                         errorElement.innerText = '';
-    inputElement.parentElement.classList.remove('invalid');
+                        inputElement.parentElement.classList.remove('invalid');
                     }
                 }
             }
@@ -62,3 +65,4 @@ Validator.minLength = function (selector, min) {
         }
     }
 }
+

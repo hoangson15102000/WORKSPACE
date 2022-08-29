@@ -1,277 +1,438 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap"
-        rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap"
+      rel="stylesheet"
+    />
     <script src="main.js"></script>
+    <script type="module" src="./src/jwt-decode.js"></script>
     <title>Entrade Trading</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- <div id="main"> -->
     <header class="header">
-        <button class="logo-button" type="button"><img
-                src="https://cdn.entrade.com.vn/entrade-ladingpage/img/logo-entrade-mau.png" alt="entrade logo"
-                class="img_header" />
-        </button>
-        <div class="div_head"><a href="https://entrade.com.vn/" class="a_head">TRANG CHỦ</a></div>
-        <div class="div_head"><a href="" class="a_head">GIAO DỊCH</a></div>
-        <div class="div_head"><a href="" class="a_head">AVATAR</a></div>
-        <div class="div_head"><a href="" class="a_head">BLOG</a></div>
-        <div class="div_head"><a href="" class="a_head">BẢNG GIÁ</a></div>
+      <button class="logo-button" type="button">
+        <img
+          src="https://cdn.entrade.com.vn/entrade-ladingpage/img/logo-entrade-mau.png"
+          alt="entrade logo"
+          class="img_header"
+        />
+      </button>
+      <div class="div_head">
+        <a href="https://entrade.com.vn/" class="a_head">TRANG CHỦ</a>
+      </div>
+      <div class="div_head"><a href="" class="a_head">GIAO DỊCH</a></div>
+      <div class="div_head"><a href="" class="a_head">AVATAR</a></div>
+      <div class="div_head"><a href="" class="a_head">BLOG</a></div>
+      <div class="div_head"><a href="" class="a_head">BẢNG GIÁ</a></div>
     </header>
     <main class="content">
-        <div class="content-c2">
-            <div class="content-left">
-                <img style="width: 36px; height: 36px; margin: 0 auto;"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAA0CAMAAAAe047PAAABmFBMVEVHcEyAAACAAACAAACAAACAAACAAACAAACAAACAAACBAACAAACHAACGAAB/AACAAACAAACCAACBAACAAACAAACAAACAAACAAACAAACAAACAAACAAACCAACAAACHAACBAACDAAB/AACDAAB/AACCAACFAACCAACGAACDAACBAACAAACAAACAAACGAACAAACDAACHAACDAACBAACCAACCAAB/AACAAACGAACAAACDAACDAACCAAB/AACAAACFAACBAACDAACGAACFAACDAACDAAB/AACAAACDAACAAACAAACAAAB/AACFAACBAACDAACBAACGAACCAACHAACGAACCAACCAAB/AACDAACAAACCAACGAACDAACCAACGAACBAACAAACAAACAAACGAAB/AACAAACAAACAAACBAACAAACAAACBAACDAACAAACAAACCAAB/AACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACBAACBAACCAACBAACAAACBAACBAACAAACAAAB/AABggu6jAAAAhnRSTlMA5qHYr6oZ7/QXV9MTE/O48gRb1Kvd3ALeGOmsBe0ZXIDsivF1E3oYhAPwUNYS23kXfl8CB+/aFll9ggbusBBTdxUVgYby/Htc7Pb2GGCOVRd+HByIh6tipG8QBXEPGWEE8Q6z1x0IS+rQ2nj+GwHpUxX9FuQcVfvgn7PVe81MUQNqfQFoz/mJkUgAAAF4SURBVEjH7ZZFUwNBEIUHAtkESwJRNLi7a3B3d3d3d0n+NieWfV3VU1y4TV+/V9+bnd6qXXGryWZW/MzFpTR4J26CsrHpIp80F7wXmpRH6CKrRRqMVCIlUiIlUiIlUqJ/Fck/6c26yCwPOoUpMcwwrjXuJ+LMDUGvHYMbwnplNszyPuBQqS7y+I6MwS0vBhcFzs458JQYwczpIQR3lxAvbGJPOefZdmHwgPB4fPCmYk60gsGTdcTHJuxp5TyrbgzOET6CPRp7Q0MY7JtH7IjGngbOU1WCwR7Co7AnM5YTVWAwvYXwBOyp5zzJNRjMIjyAPfYyTpRGrpKcPJ/cUCfnaSS79RNehz1xtZyIvGzV2YQXYU8H56kkB8ohvBB7LKmciOy2oA2xZw97MjiPg+w2j/Br7BnI/eOButoJJyub4jziAYNjBD9jT/8E53khux1F/PGEPcOc5/ULg5OEf2JPaJwTvWGwe5Dwx6Rww0zPsDf0DkFn7y/5Bi7Jz7B2IDlyAAAAAElFTkSuQmCC"
-                    class="sc-qYGWS jnzTeZ">
-                <div style="height: 48px;width: 30px;">
-
-                </div>
-                <label class="" style="font-size: 25px;
-                            color: rgb(51, 51, 51); text-align: center;">If you don't find a way to make money while
-                    you sleep, you will work until you die.</label>
-                <div style="width:70px;
-                        height: 1px; background-color: #ccc;margin: 34px auto;"></div>
-                <label class=""
-                    style="font-size: 22px; color: rgba(51, 51, 51,0.5);line-height: 36px; text-align: center; font-style: italic;">Warren
-                    Buffet</label>
-            </div>
-            <div style="width:1px;
-                        height: 550px; background-color: black;"></div>
-            <form id="form-1">
-                <div class="content-right">
-                    <h2 style="margin: 0 auto; line-height: 35.1px; font-size: 30px; color: rgb(128, 0, 0)">ĐĂNG NHẬP
-                    </h2>
-                    <div style="width: 396px; height: 60px;">
-                    </div>
-                    <div class="form-group">
-                        <label style="color: rgb(131, 124, 124);font-size:12px; font-weight:400;" data-shrink="true"
-                            for="" id="">Email/ Số
-                            điện thoại</label>
-                        <div style="max-height: 26px; margin-top: 2pz; display: flex;">
-                            <svg style="margin:0;padding:0;border:0;width: 26px;height:26px; color:rgb(128, 0, 0);fill: currentcolor;"
-                                class="" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                <path
-                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
-                                </path>
+      <div class="content-c2">
+        <div class="content-left">
+          <img
+            style="width: 36px; height: 36px; margin: 0 auto"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAA0CAMAAAAe047PAAABmFBMVEVHcEyAAACAAACAAACAAACAAACAAACAAACAAACAAACBAACAAACHAACGAAB/AACAAACAAACCAACBAACAAACAAACAAACAAACAAACAAACAAACAAACAAACCAACAAACHAACBAACDAAB/AACDAAB/AACCAACFAACCAACGAACDAACBAACAAACAAACAAACGAACAAACDAACHAACDAACBAACCAACCAAB/AACAAACGAACAAACDAACDAACCAAB/AACAAACFAACBAACDAACGAACFAACDAACDAAB/AACAAACDAACAAACAAACAAAB/AACFAACBAACDAACBAACGAACCAACHAACGAACCAACCAAB/AACDAACAAACCAACGAACDAACCAACGAACBAACAAACAAACAAACGAAB/AACAAACAAACAAACBAACAAACAAACBAACDAACAAACAAACCAAB/AACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACBAACBAACCAACBAACAAACBAACBAACAAACAAAB/AABggu6jAAAAhnRSTlMA5qHYr6oZ7/QXV9MTE/O48gRb1Kvd3ALeGOmsBe0ZXIDsivF1E3oYhAPwUNYS23kXfl8CB+/aFll9ggbusBBTdxUVgYby/Htc7Pb2GGCOVRd+HByIh6tipG8QBXEPGWEE8Q6z1x0IS+rQ2nj+GwHpUxX9FuQcVfvgn7PVe81MUQNqfQFoz/mJkUgAAAF4SURBVEjH7ZZFUwNBEIUHAtkESwJRNLi7a3B3d3d3d0n+NieWfV3VU1y4TV+/V9+bnd6qXXGryWZW/MzFpTR4J26CsrHpIp80F7wXmpRH6CKrRRqMVCIlUiIlUiIlUqJ/Fck/6c26yCwPOoUpMcwwrjXuJ+LMDUGvHYMbwnplNszyPuBQqS7y+I6MwS0vBhcFzs458JQYwczpIQR3lxAvbGJPOefZdmHwgPB4fPCmYk60gsGTdcTHJuxp5TyrbgzOET6CPRp7Q0MY7JtH7IjGngbOU1WCwR7Co7AnM5YTVWAwvYXwBOyp5zzJNRjMIjyAPfYyTpRGrpKcPJ/cUCfnaSS79RNehz1xtZyIvGzV2YQXYU8H56kkB8ohvBB7LKmciOy2oA2xZw97MjiPg+w2j/Br7BnI/eOButoJJyub4jziAYNjBD9jT/8E53khux1F/PGEPcOc5/ULg5OEf2JPaJwTvWGwe5Dwx6Rww0zPsDf0DkFn7y/5Bi7Jz7B2IDlyAAAAAElFTkSuQmCC"
+            class="sc-qYGWS jnzTeZ"
+          />
+          <div style="height: 48px; width: 30px"></div>
+          <label
+            class=""
+            style="font-size: 25px; color: rgb(51, 51, 51); text-align: center"
+            >If you don't find a way to make money while you sleep, you will
+            work until you die.</label
+          >
+          <div
+            style="
+              width: 70px;
+              height: 1px;
+              background-color: #ccc;
+              margin: 34px auto;
+            "
+          ></div>
+          <label
+            class=""
+            style="
+              font-size: 22px;
+              color: rgba(51, 51, 51, 0.5);
+              line-height: 36px;
+              text-align: center;
+              font-style: italic;
+            "
+            >Warren Buffet</label
+          >
+        </div>
+        <div style="width: 1px; height: 550px; background-color: black"></div>
+        <form id="form-1">
+          <div class="content-right">
+            <h2
+              style="
+                margin: 0 auto;
+                line-height: 35.1px;
+                font-size: 30px;
+                color: rgb(128, 0, 0);
+              "
+            >
+              ĐĂNG NHẬP
+            </h2>
+            <div style="width: 396px; height: 60px"></div>
+            <div class="form-group">
+              <label
+                style="
+                  color: rgb(131, 124, 124);
+                  font-size: 12px;
+                  font-weight: 400;
+                "
+                data-shrink="true"
+                for=""
+                id=""
+                >Email/ Số điện thoại</label
+              >
+              <div style="max-height: 26px; margin-top: 2pz">
+                <svg
+                  style="
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    width: 26px;
+                    height: 26px;
+                    color: rgb(128, 0, 0);
+                    fill: currentcolor;
+                  "
+                  class=""
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  ></path>
                 </svg>
 
-                            <input id="email"
-                                style="margin:0;padding:0;border:0;background: transparent; height: 26px;width: 360px;"
-                                name="email" type="email" value="" onchange = 'change()'>
-                            <span class="form-message"></span>
-                        </div>
-                    </div>
-                    <div style="width: 385px;px;
-                            height: 1.5px; background-color: rgb(128, 0, 0);"></div>
-                    <div style="width: 396px; height: 19.91px;"></div>
-                    <div class="form-group">
-                        <label style="color: rgb(131, 124, 124);font-size:12px; font-weight:400;" data-shrink="true"
-                            for="password-inp" id="password-inp-label">Mật khẩu</label>
-                        <div style="margin-top:2px; display: flex;">
-                            <svg style="margin:0;padding:0;border:0;width: 26px;height:26px; color:rgb(128, 0, 0);fill: currentcolor;"
-                                focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                <path color=""
-                                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z">
-                                </path>
-                            </svg>
-                            <input id="password"
-                                style="margin:0;padding:0;border:0;background: transparent; height: 26px;width: 360px;"
-                                name="password" type="password" value="" onchange = 'change()'>
-                            <span class="form-message"></span>
-                        </div>
-                    </div>
-                    <div style="width: 385px;height: 1.5px; background-color: rgb(128, 0, 0);">
-                    </div>
-                    <div class="space">
+                <input
+                  id="email"
+                  style="
+                    position: relative;
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    background: transparent;
+                    height: 26px;
+                    width: 360px;
+                    top: -8px;
+                  "
+                  name="email"
+                  type="email"
+                  value=""
+                  oninput="change()"
+                />
+                <span class="form-message"></span>
+              </div>
+            </div>
+            <div
+              style="width: 385px;px;
+                            height: 1.5px; background-color: rgb(128, 0, 0);"
+            ></div>
+            <div style="width: 396px; height: 19.91px"></div>
+            <div class="form-group">
+              <label
+                style="
+                  color: rgb(131, 124, 124);
+                  font-size: 12px;
+                  font-weight: 400;
+                "
+                data-shrink="true"
+                for="password-inp"
+                id="password-inp-label"
+                >Mật khẩu</label
+              >
+              <div style="">
+                <svg
+                  style="
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    width: 26px;
+                    height: 26px;
+                    color: rgb(128, 0, 0);
+                    fill: currentcolor;
+                  "
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    color=""
+                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
+                  ></path>
+                </svg>
+                <input
+                  id="password"
+                  style="
+                    position: relative;
+                    top: -8px;
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    background: transparent;
+                    height: 26px;
+                    width: 360px;
+                  "
+                  name="password"
+                  type="password"
+                  value=""
+                  oninput="change()"
+                />
+                <span class="form-message"></span>
+              </div>
+            </div>
+            <div
+              style="
+                width: 385px;
+                height: 1.5px;
+                background-color: rgb(128, 0, 0);
+              "
+            ></div>
+            <div class="space"></div>
+            <div id="forget-password">
+              <div class="box1">
+                <a class="" id="forget-pass-btn" href="/quen-mat-khau"
+                  >Quên mật khẩu?</a
+                >
+              </div>
+              <div class="box2">
+                <a class="" id="register-btn" href="/dang-ky">Đăng ký</a>
+              </div>
+            </div>
+            <button
+              disabled
+              class="button-login"
+              tabindex="-1"
+              type="button"
+              onclick="funcClick()"
+              id="login-btn"
+              aria-label="login-btn"
+              style="
+                opacity: ;
+                background: rgb(128, 0, 0);
+                width: 100%;
+                color: rgb(255, 255, 255);
+                margin-top: 30px;
+                height: 50px;
+                border-radius: 6px;
+              "
+            >
+              <span class=""
+                ><span style="line-height: 0; font-size: 14px"
+                  >ĐĂNG NHẬP</span
+                ></span
+              >
+            </button>
+            <style></style>
+            <script>
+              function change() {
+                var emailElement = document.getElementById("email");
+                var emailValue = emailElement.value;
+                var passwordElement = document.getElementById("password");
+                var passwordValue = passwordElement.value;
 
-                    </div>
-                    <div id="forget-password">
-                        <div class="box1"><a class="" id="forget-pass-btn" href="/quen-mat-khau">Quên mật khẩu?</a>
-                        </div>
-                        <div class="box2"><a class="" id="register-btn" href="/dang-ky">Đăng
-                                ký</a></div>
-                    </div>
-                    <button class="button-login"  tabindex="-1"  type="button" onclick="funcClick()"  id="login-btn"
-                        aria-label="login-btn"
-                        style="opacity:; background: rgb(128, 0, 0); width: 100%; color: rgb(255, 255, 255); margin-top: 30px; height: 50px; border-radius: 6px;"><span
-                            class="" ><span style="line-height: 0; font-size: 14px; ">ĐĂNG
-                                NHẬP</span></span></button>
-                                <style>
-                                </style>
-                    <script>
-                        // var obj = document.getElementById('email');
-                        // var obj2 = document.getElementById('password');
-                //         obj2.addEventListener('change',function change(){
-                //         if(emailValue !== '' && passwordValue !== '') {
-                //         document.getElementById("login-btn").disabled = false;
-                //     }
-                //     else{document.getElementById("login-btn").disabled = true;} 
-                //     }
-                //    );
-                //         obj.addEventListener('change',function change(){
-                //         if(emailValue !== '' && passwordValue !== '') {
-                //         document.getElementById("login-btn").disabled = false;
-                //     }
-                //     else{document.getElementById("login-btn").disabled = true;} 
-                //     }
-                //    );
-                function change(){
-                        if(emailValue !== '' && passwordValue !== '') {
-                        document.getElementById("login-btn").disabled = false;
+                // console.log("Hello", emailValue, passwordValue);
+                if (emailValue !== "" && passwordValue !== "") {
+                  document.getElementById("login-btn").disabled = false;
+                } else {
+                  document.getElementById("login-btn").disabled = true;
+                }
+              }
+
+              function funcClick() {
+                var emailElement = document.getElementById("email");
+                var emailValue = emailElement.value;
+                var Tendangnhap = "Tendangnhap";
+                var Matkhau = "matkhau";
+
+                var passwordElement = document.getElementById("password");
+                var passwordValue = passwordElement.value;
+                var myApi =
+                  "https://services.entrade.com.vn/entrade-api/v2/auth";
+                var options = {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    password: passwordValue,
+                    username: emailValue,
+                  }),
+                };
+                function Redirect() {
+                  localStorage.setItem(Tendangnhap, emailValue);
+                  localStorage.setItem(Matkhau, passwordValue);
+                  window.location =
+                    "http://127.0.0.1:5500/frontend/test/test.html";
+                }
+                function Redirectfail() {
+                  window.location =
+                    "http://127.0.0.1:5500/frontend/test/error.html";
+                }
+                fetch(myApi, options)
+                  .then(function (response) {
+                    if (response.status == 200) {
+                      alert("Đăng nhập thành công");
+                    } else {
+                      alert("Đăng nhập không thành công");
                     }
-                    else{document.getElementById("login-btn").disabled = true;} 
-                    }
-                    var emailElement = document.getElementById('email');
-                        var emailValue = emailElement.value;
-                            var passwordElement = document.getElementById('password');
-                            var passwordValue = passwordElement.value;
-                    function funcClick() {
-                            var emailElement = document.getElementById('email');
-                            var emailValue = emailElement.value;
-                            var Tendangnhap = 'Tendangnhap';
-                            var Matkhau = 'matkhau';
-                            console.log(typeof emailValue);
-                            var passwordElement = document.getElementById('password');
-                            var passwordValue = passwordElement.value;
-                            var myApi = 'https://services.entrade.com.vn/entrade-api/v2/auth';
-                            var options = {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({ "password": passwordValue, "username": emailValue })
-                            }
-                            function Redirect() {
-                                localStorage.setItem(Tendangnhap, emailValue);
-                                localStorage.setItem(Matkhau, passwordValue);
-               window.location="http://127.0.0.1:5500/frontend/test/test.html";
-            }
-            function Redirectfail() {
-               window.location="http://127.0.0.1:5500/frontend/test/error.html";
-            }
-                            fetch(myApi, options)
-                                .then(
-                                    function(responsive){
-                                        if(responsive.status !==200){
-                                            Redirectfail()
-                                        }
-                                        else{Redirect()
-
-                                        }
-                                    }
-                                )
-                                .catch();
-
-
-                        }</script>
-                </div>
-            </form>
-        </div>
-
-        </div>
+                    console.log(response);
+                    return response.json();
+                  })
+                  .catch();
+              }
+            </script>
+          </div>
+        </form>
+      </div>
     </main>
     <footer id="footer">
-        <div class="main-footer">
-            <div class="footer-a">
-                <img src="data:image/png;base64,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"
-                    alt="Encapital" id="img-footer-a">
-                <label id="logo-footer">ENTRADE là sản phẩm phát triển bởi Công ty cổ phần công nghệ tài chính
-                    ENCAPITAL</label><br>
-                <label id="info-footer">Địa chỉ : 46 Ngô Quyền, Hoàn Kiếm, Hà Nội<br>
-                    Mã số thuế: 0108400691<br>
-                    Website: <span class="red">encapital.io</span><br>
-                    Email: <span class="red">hello@entrade.com.vn</span><br>
-                    Hotline: <span class="red">+84 24 7105 9988</span></label>
-                <h2 class="red support abb">HỖ TRỢ KHÁCH HÀNG</h2>
-                <div class="support-end">
-                    <a href="https://m.me/encapitalfintech/" target="_blank" rel="noopener" class="icon-footer-a"><img
-                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEzMTMgLTM5MTgpIj48cmVjdCBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyMzczIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSI0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzEzIDM5MTgpIiBmaWxsPSIjOTg5ODk4Ii8+PHBhdGggZGF0YS1uYW1lPSJQYXRoIDM2MDgiIGQ9Ik0xMzMzLjI5NyAzOTI3LjExNWMtNy4xMDUgMC0xMi44NjMgNC40MjktMTIuODYzIDkuODk0YTguODU0IDguODU0IDAgMDAzLjYzOSA2LjljLS4xMzEgMS44MTMtLjU2OCA0LjAzNS0xLjgzOSA1LjIyOCAyLjUyMSAwIDUuMS0xLjU3OSA2LjcyNi0yLjgxNGExNi4zNDggMTYuMzQ4IDAgMDA0LjMzMi41NzZjNy4xIDAgMTIuODYzLTQuNDI3IDEyLjg2My05Ljg5NHMtNS43NTQtOS44OS0xMi44NTgtOS44OXoiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+"
-                            class="img-footer-a"></a><br>
-                    <a href="https://zalo.me/2600182969357362273" target="_blank" rel="noopener"
-                        class="icon-footer-a"><img
-                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0MTMgLTM5MTgpIj48cmVjdCBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyMzcyIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSI0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDEzIDM5MTgpIiBmaWxsPSIjOTg5ODk4Ii8+PGcgZGF0YS1uYW1lPSJHcm91cCA2MTc3Ij48cGF0aCBkYXRhLW5hbWU9IlBhdGggMzU5NiIgZD0iTTE0MzEuODQxIDM5NDMuODMxYzIuNCAwIDQuNjQ3LS4wMTQgNi44OS4wMDUgMS4yNi4wMTEgMS45NDEuNTQ3IDIuMDU3IDEuNTRhMS43NzEgMS43NzEgMCAwMS0xLjk0NyAyLjEwNmMtMi41NjcuMDI5LTUuMTM1LjAxMS03LjcuMDExLS43NDEgMC0xLjQ4NC4wMjYtMi4yMjMtLjAxN2EyLjMyOCAyLjMyOCAwIDAxLTIuMjYzLTEuMTg2IDIuMzU2IDIuMzU2IDAgMDEuNDc1LTIuNTgzcTMuNjgtNC42ODEgNy4zNjUtOS4zNThjLjE0Ni0uMTg1LjI4Ny0uMzc0LjQyOC0uNTYtLjE1LS4yNzEtLjM4OC0uMTQ5LS41NzMtLjE1MS0xLjcyLS4wMTEtMy40NDEgMC01LjE2Mi0uMDEyYTQuODM0IDQuODM0IDAgMDEtMS4xNzYtLjEzNCAxLjY3IDEuNjcgMCAwMS0uMDI5LTMuMjQ1IDQuNDQzIDQuNDQzIDAgMDExLjE3Ni0uMTQ0cTQuMjQ4LS4wMTcgOC41IDBhNC41MzkgNC41MzkgMCAwMTEuNDkuMTgyIDEuNzI3IDEuNzI3IDAgMDExLjExIDIuNDA5IDEwLjc4NiAxMC43ODYgMCAwMS0xLjU5MSAyLjQ1OHEtMy4xMTUgMy45NjQtNi4yNDEgNy45MTljLS4xNjcuMjA0LS4zMjMuNDE0LS41ODYuNzZ6IiBmaWxsPSIjZmZmIi8+PC9nPjwvZz48L3N2Zz4="
-                            class="img-footer-a"></a><br>
-                    <a href="https://t.me/joinchat/n4wuEUchsTcxZjE1" target="_blank" rel="noopener"
-                        class="icon-footer-a"><img
-                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMyIgZmlsbD0iIzk4OTg5OCIvPjxwYXRoIGQ9Ik05LjMxNyAxOC43MzVzOS41LTMuODk5IDEyLjc5NS01LjI3MmMxLjI2My0uNTQ5IDUuNTQ2LTIuMzA2IDUuNTQ2LTIuMzA2czEuOTc3LS43NjkgMS44MTIgMS4wOThjLS4wNTUuNzY5LS40OTQgMy40Ni0uOTMzIDYuMzctLjY2IDQuMTE5LTEuMzczIDguNjIxLTEuMzczIDguNjIxcy0uMTEgMS4yNjMtMS4wNDQgMS40ODNjLS45MzMuMjItMi40Ny0uNzY5LTIuNzQ1LS45ODgtLjIyLS4xNjUtNC4xMTktMi42MzYtNS41NDctMy44NDQtLjM4NC0uMzMtLjgyMy0uOTg5LjA1NS0xLjc1N2EyMDkuODQ1IDIwOS44NDUgMCAwMDUuNzY2LTUuNDkyYy42Ni0uNjU5IDEuMzE4LTIuMTk2LTEuNDI4LS4zMy0zLjg5OCAyLjY5MS03Ljc0MiA1LjIxNy03Ljc0MiA1LjIxN3MtLjg3OS41NS0yLjUyNi4wNTVjLTEuNjQ4LS40OTQtMy41Ny0xLjE1My0zLjU3LTEuMTUzcy0xLjMxOC0uODI0LjkzNC0xLjcwMnoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="
-                            class="img-footer-a"></a><br>
-                    <a href="https://www.facebook.com/groups/entradevn/" target="_blank" rel="noopener"
-                        class="icon-footer-a"><img
-                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEzNjQgLTM5MTgpIj48cmVjdCBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyMzcxIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSI0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzY0IDM5MTgpIiBmaWxsPSIjOTg5ODk4Ii8+PHBhdGggZD0iTTEzODYuOTc3IDM5MzIuMTgxaDEuNjV2LTIuODczYTIxLjMgMjEuMyAwIDAwLTIuNDA0LS4xMjdjLTIuMzc4IDAtNC4wMDcgMS41LTQuMDA3IDQuMjQ1djIuNTNoLTIuNjI1djMuMjEzaDIuNjI1djguMDgxaDMuMjE4di04LjA4MWgyLjUxOGwuNC0zLjIxMmgtMi45MTl2LTIuMjEyYzAtLjkyOC4yNTEtMS41NjQgMS41NDQtMS41NjR6IiBmaWxsPSIjZmZmIi8+PC9nPjwvc3ZnPg=="
-                            class="img-footer-a"></a><br>
-                </div>
-            </div>
-            <div class="footer-b">
-                <h2 class="red footer-b1">BẠN CẦN BIẾT</h2>
-                <ul>
-                    <li style="margin-top: 12px;" class="li-ft">Thử thách 100 triệu</li>
-                    <li class="li-ft">Hướng dẫn sử dụng</li>
-                    <li class="li-ft">Hướng dẫn nộp tiền</li>
-                    <li class="li-ft">Giới thiệu bạn bè</li>
-                    <li class="li-ft">Khách hàng góp ý</li>
-                    <li class="li-ft">Tải app</li>
-                </ul>
-            </div>
-            <div class="footer-c">
-                <h2 class="red footer-b1">BÀI VIẾT MỚI</h2>
-                <div class="div-flex">
-                    <img src="http://blog.entrade.com.vn/content/images/2022/07/07.07.JPG" alt="image" style="    width: 80px;
-                        height: 60px;" class="img-end">
-                    <div class="cover-newp">
-                        <h3 class="new-p">Tâm lý cân bằng trở lại giúp thị trường hồi phục với thanh khoản thấp</h3>
-                        <p class="style-new-p">17:12 07 THÁNG 7 2022</p>
-                    </div>
-                </div>
-                <div class="div-flex">
-                    <img src="http://blog.entrade.com.vn/content/images/2022/07/06.07.JPG" alt="image" class="img-end">
-                    <div class="cover-newp">
-                        <h3 class="new-p">Áp lực tâm lý đè nặng từ đầu phiên, thị trường chìm trong sắc đỏ</h3>
-                        <p class="style-new-p">18:20 06 THÁNG 7 2022</p>
-                    </div>
-                </div>
-                <div class="div-flex">
-                    <img src="http://blog.entrade.com.vn/content/images/2022/07/05.07.JPG" alt="image" class="img-end">
-                    <div class="cover-newp">
-                        <h3 class="new-p">Cổ phiếu "vua" trụ vững trong cơn sóng đỏ lan rộng của thị trường chung</h3>
-                        <p class="style-new-p">17:05 05 THÁNG 7 2022</p>
-                    </div>
-                </div>
-            </div>
-
+      <div class="main-footer">
+        <div class="footer-a">
+          <img
+            src="data:image/png;base64,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"
+            alt="Encapital"
+            id="img-footer-a"
+          />
+          <label id="logo-footer"
+            >ENTRADE là sản phẩm phát triển bởi Công ty cổ phần công nghệ tài
+            chính ENCAPITAL</label
+          ><br />
+          <label id="info-footer"
+            >Địa chỉ : 46 Ngô Quyền, Hoàn Kiếm, Hà Nội<br />
+            Mã số thuế: 0108400691<br />
+            Website: <span class="red">encapital.io</span><br />
+            Email: <span class="red">hello@entrade.com.vn</span><br />
+            Hotline: <span class="red">+84 24 7105 9988</span></label
+          >
+          <h2 class="red support abb">HỖ TRỢ KHÁCH HÀNG</h2>
+          <div class="support-end">
+            <a
+              href="https://m.me/encapitalfintech/"
+              target="_blank"
+              rel="noopener"
+              class="icon-footer-a"
+              ><img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEzMTMgLTM5MTgpIj48cmVjdCBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyMzczIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSI0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzEzIDM5MTgpIiBmaWxsPSIjOTg5ODk4Ii8+PHBhdGggZGF0YS1uYW1lPSJQYXRoIDM2MDgiIGQ9Ik0xMzMzLjI5NyAzOTI3LjExNWMtNy4xMDUgMC0xMi44NjMgNC40MjktMTIuODYzIDkuODk0YTguODU0IDguODU0IDAgMDAzLjYzOSA2LjljLS4xMzEgMS44MTMtLjU2OCA0LjAzNS0xLjgzOSA1LjIyOCAyLjUyMSAwIDUuMS0xLjU3OSA2LjcyNi0yLjgxNGExNi4zNDggMTYuMzQ4IDAgMDA0LjMzMi41NzZjNy4xIDAgMTIuODYzLTQuNDI3IDEyLjg2My05Ljg5NHMtNS43NTQtOS44OS0xMi44NTgtOS44OXoiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+"
+                class="img-footer-a" /></a
+            ><br />
+            <a
+              href="https://zalo.me/2600182969357362273"
+              target="_blank"
+              rel="noopener"
+              class="icon-footer-a"
+              ><img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0MTMgLTM5MTgpIj48cmVjdCBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyMzcyIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSI0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDEzIDM5MTgpIiBmaWxsPSIjOTg5ODk4Ii8+PGcgZGF0YS1uYW1lPSJHcm91cCA2MTc3Ij48cGF0aCBkYXRhLW5hbWU9IlBhdGggMzU5NiIgZD0iTTE0MzEuODQxIDM5NDMuODMxYzIuNCAwIDQuNjQ3LS4wMTQgNi44OS4wMDUgMS4yNi4wMTEgMS45NDEuNTQ3IDIuMDU3IDEuNTRhMS43NzEgMS43NzEgMCAwMS0xLjk0NyAyLjEwNmMtMi41NjcuMDI5LTUuMTM1LjAxMS03LjcuMDExLS43NDEgMC0xLjQ4NC4wMjYtMi4yMjMtLjAxN2EyLjMyOCAyLjMyOCAwIDAxLTIuMjYzLTEuMTg2IDIuMzU2IDIuMzU2IDAgMDEuNDc1LTIuNTgzcTMuNjgtNC42ODEgNy4zNjUtOS4zNThjLjE0Ni0uMTg1LjI4Ny0uMzc0LjQyOC0uNTYtLjE1LS4yNzEtLjM4OC0uMTQ5LS41NzMtLjE1MS0xLjcyLS4wMTEtMy40NDEgMC01LjE2Mi0uMDEyYTQuODM0IDQuODM0IDAgMDEtMS4xNzYtLjEzNCAxLjY3IDEuNjcgMCAwMS0uMDI5LTMuMjQ1IDQuNDQzIDQuNDQzIDAgMDExLjE3Ni0uMTQ0cTQuMjQ4LS4wMTcgOC41IDBhNC41MzkgNC41MzkgMCAwMTEuNDkuMTgyIDEuNzI3IDEuNzI3IDAgMDExLjExIDIuNDA5IDEwLjc4NiAxMC43ODYgMCAwMS0xLjU5MSAyLjQ1OHEtMy4xMTUgMy45NjQtNi4yNDEgNy45MTljLS4xNjcuMjA0LS4zMjMuNDE0LS41ODYuNzZ6IiBmaWxsPSIjZmZmIi8+PC9nPjwvZz48L3N2Zz4="
+                class="img-footer-a" /></a
+            ><br />
+            <a
+              href="https://t.me/joinchat/n4wuEUchsTcxZjE1"
+              target="_blank"
+              rel="noopener"
+              class="icon-footer-a"
+              ><img
+                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMyIgZmlsbD0iIzk4OTg5OCIvPjxwYXRoIGQ9Ik05LjMxNyAxOC43MzVzOS41LTMuODk5IDEyLjc5NS01LjI3MmMxLjI2My0uNTQ5IDUuNTQ2LTIuMzA2IDUuNTQ2LTIuMzA2czEuOTc3LS43NjkgMS44MTIgMS4wOThjLS4wNTUuNzY5LS40OTQgMy40Ni0uOTMzIDYuMzctLjY2IDQuMTE5LTEuMzczIDguNjIxLTEuMzczIDguNjIxcy0uMTEgMS4yNjMtMS4wNDQgMS40ODNjLS45MzMuMjItMi40Ny0uNzY5LTIuNzQ1LS45ODgtLjIyLS4xNjUtNC4xMTktMi42MzYtNS41NDctMy44NDQtLjM4NC0uMzMtLjgyMy0uOTg5LjA1NS0xLjc1N2EyMDkuODQ1IDIwOS44NDUgMCAwMDUuNzY2LTUuNDkyYy42Ni0uNjU5IDEuMzE4LTIuMTk2LTEuNDI4LS4zMy0zLjg5OCAyLjY5MS03Ljc0MiA1LjIxNy03Ljc0MiA1LjIxN3MtLjg3OS41NS0yLjUyNi4wNTVjLTEuNjQ4LS40OTQtMy41Ny0xLjE1My0zLjU3LTEuMTUzcy0xLjMxOC0uODI0LjkzNC0xLjcwMnoiIGZpbGw9IiNmZmYiLz48L3N2Zz4="
+                class="img-footer-a" /></a
+            ><br />
+            <a
+              href="https://www.facebook.com/groups/entradevn/"
+              target="_blank"
+              rel="noopener"
+              class="icon-footer-a"
+              ><img
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEzNjQgLTM5MTgpIj48cmVjdCBkYXRhLW5hbWU9IlJlY3RhbmdsZSAyMzcxIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSI0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzY0IDM5MTgpIiBmaWxsPSIjOTg5ODk4Ii8+PHBhdGggZD0iTTEzODYuOTc3IDM5MzIuMTgxaDEuNjV2LTIuODczYTIxLjMgMjEuMyAwIDAwLTIuNDA0LS4xMjdjLTIuMzc4IDAtNC4wMDcgMS41LTQuMDA3IDQuMjQ1djIuNTNoLTIuNjI1djMuMjEzaDIuNjI1djguMDgxaDMuMjE4di04LjA4MWgyLjUxOGwuNC0zLjIxMmgtMi45MTl2LTIuMjEyYzAtLjkyOC4yNTEtMS41NjQgMS41NDQtMS41NjR6IiBmaWxsPSIjZmZmIi8+PC9nPjwvc3ZnPg=="
+                class="img-footer-a" /></a
+            ><br />
+          </div>
         </div>
+        <div class="footer-b">
+          <h2 class="red footer-b1">BẠN CẦN BIẾT</h2>
+          <ul>
+            <li style="margin-top: 12px" class="li-ft">Thử thách 100 triệu</li>
+            <li class="li-ft">Hướng dẫn sử dụng</li>
+            <li class="li-ft">Hướng dẫn nộp tiền</li>
+            <li class="li-ft">Giới thiệu bạn bè</li>
+            <li class="li-ft">Khách hàng góp ý</li>
+            <li class="li-ft">Tải app</li>
+          </ul>
+        </div>
+        <div class="footer-c">
+          <h2 class="red footer-b1">BÀI VIẾT MỚI</h2>
+          <div class="div-flex">
+            <img
+              src="http://blog.entrade.com.vn/content/images/2022/07/07.07.JPG"
+              alt="image"
+              style="width: 80px; height: 60px"
+              class="img-end"
+            />
+            <div class="cover-newp">
+              <h3 class="new-p">
+                Tâm lý cân bằng trở lại giúp thị trường hồi phục với thanh khoản
+                thấp
+              </h3>
+              <p class="style-new-p">17:12 07 THÁNG 7 2022</p>
+            </div>
+          </div>
+          <div class="div-flex">
+            <img
+              src="http://blog.entrade.com.vn/content/images/2022/07/06.07.JPG"
+              alt="image"
+              class="img-end"
+            />
+            <div class="cover-newp">
+              <h3 class="new-p">
+                Áp lực tâm lý đè nặng từ đầu phiên, thị trường chìm trong sắc đỏ
+              </h3>
+              <p class="style-new-p">18:20 06 THÁNG 7 2022</p>
+            </div>
+          </div>
+          <div class="div-flex">
+            <img
+              src="http://blog.entrade.com.vn/content/images/2022/07/05.07.JPG"
+              alt="image"
+              class="img-end"
+            />
+            <div class="cover-newp">
+              <h3 class="new-p">
+                Cổ phiếu "vua" trụ vững trong cơn sóng đỏ lan rộng của thị
+                trường chung
+              </h3>
+              <p class="style-new-p">17:05 05 THÁNG 7 2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
     <div id="the-end"></div>
     <div id="final">
-        <label for="">Bản quyền thuộc Công ty Cổ Phần Công nghệ Tài chính <span class="red">ENCAPITAL</span>
-        </label>
+      <label for=""
+        >Bản quyền thuộc Công ty Cổ Phần Công nghệ Tài chính
+        <span class="red">ENCAPITAL</span>
+      </label>
     </div>
     <script src="main.js"></script>
     <script>
-        // Mong muốn của chúng ta khi sử dụng thư viện này trong tương lai
-        Validator({
-            form: '#form-1',
-            errorSelector: '.form-message',
-            rules: [
-                Validator.isEmail('#email'),
-                // Validator.isRequired('#password'),
-                Validator.minLength('#password', 6),
-
-            ]
-        })
+      Validator({
+        form: "#form-1",
+        errorSelector: ".form-message",
+        rules: [
+          Validator.isEmail("#email"),
+          // Validator.isRequired('#password'),
+          Validator.minLength("#password", 6),
+        ],
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
