@@ -66,53 +66,7 @@
   </div>
 
   <!-- Playlist -->
-  <div class="playlist">
-    <div class="song">
-      <div
-        class="thumb"
-        style="
-          background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg');
-        "
-      ></div>
-      <div class="body">
-        <h3 class="title">Music name</h3>
-        <p class="author">Singer</p>
-      </div>
-      <div class="option">
-        <i class="fas fa-ellipsis-h"></i>
-      </div>
-    </div>
-    <div class="song">
-      <div
-        class="thumb"
-        style="
-          background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg');
-        "
-      ></div>
-      <div class="body">
-        <h3 class="title">Music name</h3>
-        <p class="author">Singer</p>
-      </div>
-      <div class="option">
-        <i class="fas fa-ellipsis-h"></i>
-      </div>
-    </div>
-    <div class="song">
-      <div
-        class="thumb"
-        style="
-          background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg');
-        "
-      ></div>
-      <div class="body">
-        <h3 class="title">Music name</h3>
-        <p class="author">Singer</p>
-      </div>
-      <div class="option">
-        <i class="fas fa-ellipsis-h"></i>
-      </div>
-    </div>
-  </div>
+  <div class="playlist"></div>
 </div>
 
 <!-- Design from: https://static.collectui.com/shots/3671744/musicloud-revolutionary-app-for-music-streaming-large -->
@@ -122,6 +76,7 @@
    * 1. Render songs
    * 2. Scroll top
    * 3. Play / pause / seek
+   * tra mạng W3school có những phương thức video/audio HTML
    * 4. CD rotate
    * 5. Next/prev
    * 6. Random
@@ -132,6 +87,7 @@
    * */
   const $ = document.querySelector.bind(document);
   const $$ = document.querySelectorAll.bind(document);
+  const playList = $(".playlist");
   const app = {
     songs: [
       {
@@ -158,9 +114,84 @@
         path: "./assets/music/song4.mp3",
         image: "./assets/img/song4.jpeg",
       },
+      {
+        name: "Khúc cửu môn hồi ức",
+        singer: "Khựa",
+        path: "./assets/music/song5.mp3",
+        image: "./assets/img/song5.jpeg",
+      },
+      {
+        name: "Happier",
+        singer: "Marshmello bastille",
+        path: "./assets/music/song6.mp3",
+        image: "./assets/img/song6.jpeg",
+      },
+      {
+        name: "Alone",
+        singer: "Alan Walker",
+        path: "./assets/music/song7.mp3",
+        image: "./assets/img/song7.jpeg",
+      },
+      {
+        name: "Cơn mưa băng giá",
+        singer: "Bằng Kiều",
+        path: "./assets/music/song8.mp3",
+        image: "./assets/img/song8.jpeg",
+      },
+      {
+        name: "Em của ngày hôm qua",
+        singer: "MTP",
+        path: "./assets/music/song9.mp3",
+        image: "./assets/img/song9.jpeg",
+      },
+      {
+        name: "Âm thầm bên em",
+        singer: "MTP",
+        path: "./assets/music/song10.mp3",
+        image: "./assets/img/song10.jpeg",
+      },
     ],
+    render: function () {
+      var htmls = this.songs.map(function (song) {
+        return `<div class="song">
+      <div class="thumb" style="background-image: url('${song.image}')">
+      </div>
+      <div class="body">
+        <h3 class="title">${song.name}</h3>
+        <p class="author">${song.singer}</p>
+      </div>
+      <div class="option">
+        <i class="fas fa-ellipsis-h"></i>
+      </div>
+    </div>`;
+      });
+      playList.innerHTML = htmls.join("");
+    },
+    handleEvents: function () {
+      // chọn đến class cd
+      const cd = $(".cd");
+      // chọn đến chiều cao của hình ảnh cd ở đây console.log ra 200px;
+      const cdWidth = cd.offsetWidth;
 
-    start: function () {},
+      // console.log(cdWidth);
+      // dùng sự kiện kéo trượt với function
+      document.onscroll = function () {
+        // biến window của sổ với trục Y, một số trình duyệt không thích ứng nên dùng
+        // document toàn cục ddeesnn cái scrollTop
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const newCdWidth = cdWidth - scrollTop; // trừ đi ra chiều cao
+        // console.log(newCdWidth);
+        // rồi ta gán style width vào bằng với chiều cao mới
+        // tuy nhiên ở đây gặp trường hợp hiệu nó âm nên dùng toán tử 3 ngôi xử lý vấn đề này
+        cd.style.width = newCdWidth > 0 ? newCdWidth + "px" : 0;
+        // sau đó là làm mờ , tư duy vẫn như vậy thoi
+        cd.style.opacity = newCdWidth >= 0 ? newCdWidth / cdWidth : 0;
+      };
+    },
+    start: function () {
+      this.handleEvents();
+      this.render();
+    },
   };
   app.start();
 </script>

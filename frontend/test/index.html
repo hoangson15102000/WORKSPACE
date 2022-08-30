@@ -12,7 +12,10 @@
       rel="stylesheet"
     />
     <script src="main.js"></script>
-    <script type="module" src="./src/jwt-decode.js"></script>
+    <script
+      type="module"
+      src="./node_modules/jwt-decode/build/jwt-decode.js"
+    ></script>
     <title>Entrade Trading</title>
   </head>
 
@@ -254,8 +257,9 @@
               function funcClick() {
                 var emailElement = document.getElementById("email");
                 var emailValue = emailElement.value;
-                var Tendangnhap = "Tendangnhap";
-                var Matkhau = "matkhau";
+                var jwt = "jwtoken";
+                var token =
+                  "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjdXUudHJ2QGdtYWlsLmNvbSIsInJvbGVzIjpbImludmVzdG9yIl0sImZ1bGxOYW1lIjoiVHLhuqduIFbEqW5oIEPhu611Iiwibmlja25hbWUiOiJDdXVUcmFuIiwiaW52ZXN0b3JJZCI6MTAwMDAwMDAxOCwidHlwZSI6ImludmVzdG9yIiwidXNlcm5hbWUiOiJjdXUudHJ2QGdtYWlsLmNvbSIsImJhbmtJZCI6MCwic3RhdHVzIjoiQUNUSVZFIiwiaXNzIjoiRW5jYXBpdGFsIiwiaWF0IjoxNjYxNzU1NzYxLCJleHAiOjE2NjE3ODQ1NjF9.hXPvtDMx2SYdf9JVo9jokRX_VhaUtUnk4Yqoo5V0J0hoDShQxL7eAvcLBtjzpVtRS4mCXMj4h5JKCIT2Grcka4qg7OCmDm9mLpBT38nSxAJfT4VM1IGozFb3_GoZiqVSyRSr21jL4PzrgRdmHAsbR6bEY6MXAvF3y1GdzkRJxbM";
 
                 var passwordElement = document.getElementById("password");
                 var passwordValue = passwordElement.value;
@@ -272,10 +276,9 @@
                   }),
                 };
                 function Redirect() {
-                  localStorage.setItem(Tendangnhap, emailValue);
-                  localStorage.setItem(Matkhau, passwordValue);
-                  window.location =
-                    "http://127.0.0.1:5500/frontend/test/test.html";
+                  localStorage.setItem(jwt, token);
+                  // window.location =
+                  //   "http://127.0.0.1:5500/frontend/test/test.html";
                 }
                 function Redirectfail() {
                   window.location =
@@ -284,14 +287,36 @@
                 fetch(myApi, options)
                   .then(function (response) {
                     if (response.status == 200) {
+                      Redirect();
                       alert("Đăng nhập thành công");
                     } else {
+                      Redirectfail();
                       alert("Đăng nhập không thành công");
                     }
-                    console.log(response);
+
                     return response.json();
                   })
+                  .then((result) => {
+                    const decoded = jwt_decode(result.token);
+                    if (decoded.exp - decoded.iat <= 28800) {
+                      console.log("Còn thời hạn cho token");
+                    } else {
+                      console.log("het han");
+                    }
+                    console.log(result);
+                  })
                   .catch();
+              }
+              function checkJWT() {
+                var valueJwt = LocalStorage.getItem(jwt);
+                var decoded = jwt_decode(token);
+                console.log(decoded);
+
+                if (decoded.exp - decoded.iat <= 28800) {
+                  console.log("Còn thời hạn cho token");
+                } else {
+                  console.log("het han");
+                }
               }
             </script>
           </div>

@@ -126,12 +126,3 @@
 })));
 
 
-var token = "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjdXUudHJ2QGdtYWlsLmNvbSIsInJvbGVzIjpbImludmVzdG9yIl0sImZ1bGxOYW1lIjoiVHLhuqduIFbEqW5oIEPhu611Iiwibmlja25hbWUiOiJDdXVUcmFuIiwiaW52ZXN0b3JJZCI6MTAwMDAwMDAxOCwidHlwZSI6ImludmVzdG9yIiwidXNlcm5hbWUiOiJjdXUudHJ2QGdtYWlsLmNvbSIsImJhbmtJZCI6MCwic3RhdHVzIjoiQUNUSVZFIiwiaXNzIjoiRW5jYXBpdGFsIiwiaWF0IjoxNjYxNzU1NzYxLCJleHAiOjE2NjE3ODQ1NjF9.hXPvtDMx2SYdf9JVo9jokRX_VhaUtUnk4Yqoo5V0J0hoDShQxL7eAvcLBtjzpVtRS4mCXMj4h5JKCIT2Grcka4qg7OCmDm9mLpBT38nSxAJfT4VM1IGozFb3_GoZiqVSyRSr21jL4PzrgRdmHAsbR6bEY6MXAvF3y1GdzkRJxbM";
-var decoded = jwt_decode(token);
-console.log(decoded);
-if (decoded.exp - decoded.iat <= 28800) {
-    console.log('Còn thời hạn cho token')
-}
-else {
-    console.log('het han');
-}
