@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>BEM</title>
+  </head>
+  <body>
+    <div class="main" id="toast"></div>
+    <div class="btn--main">
+      <button onclick="showSuccessToast()" class="btn btn--success">
+        Show Success toast
+      </button>
+      <button onclick="showErrorToast()" class="btn btn--error">
+        Show error toast
+      </button>
+    </div>
+    <script>
+      // Toast function
+
+      function toast({
+        title = "",
+        message = "",
+        type = "info",
+        duration = 3000,
+      }) {
+        const main = document.getElementById("toast");
+        if (main) {
+          const toast = document.createElement("div");
+          const delay = (duration / 1000).toFixed(2);
+          //auto remove toast
+          const autoRemoveId = setTimeout(function () {
+            main.removeChild(toast);
+          }, duration + 1000);
+
+          toast.classList.add("toast", `toast--${type}`);
+          toast.style.animation = `slideInLeft ease 2s, fadeOut linear 1s ${delay}s forwards`;
+          const icons = {
+            success: "fa-solid fa-square-check",
+            info: "fa-sharp fa-solid fa-circle-info",
+            warning: "fa-sharp fa-solid fa-circle-exclamation",
+            error: "fa-sharp fa-solid fa-circle-exclamation",
+          };
+          const icon = icons[type];
+          // remove toast when click
+          toast.onclick = function (e) {
+            if (e.target.closest(".toast__close")) {
+              main.removeChild(toast);
+              clearTimeout(autoRemoveId);
+            }
+          };
+
+          toast.innerHTML = `<div class="toast__icon">
+          <i class="${icon}"></i>
+        </div>
+        <div class="toast__body">
+          <h3 class="toast__title">${title}</h3>
+          <p class="toast__msg">
+            ${message}
+          </p>
+        </div>
+        <div class="toast__close">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>`;
+          main.appendChild(toast); // hàm appendChild này sẽ có nhiệm vụ khi click vào button
+          // thì sẽ thêm 1 thẻ vào vị trí cuối cùng của bên trong thẻ thêm
+        }
+      }
+      function showErrorToast() {
+        toast({
+          title: "Error",
+          message: "Lỗi cmm rồi kia kìa",
+          type: "error",
+          duration: 5000,
+        });
+      }
+      function showSuccessToast() {
+        toast({
+          title: "Success",
+          message: "Thành công rồi mày",
+          type: "success",
+          duration: 5000,
+        });
+      }
+    </script>
+  </body>
+</html>

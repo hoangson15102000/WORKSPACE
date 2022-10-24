@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Props</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+</head>
+  </head>
+  <body><div id="root"></div>
+<script type="text/babel">
+    const Courses = [
+{
+title: "Kiến Thức Nhập Môn IT",
+description:
+"Để có cái nhìn tổng quan về ngành IT - Lập trình web các bạn nên xem các videos tại khóa này trước nhé.",
+studentCount: 56546,
+image: "http://vn.blog.kkday.com/wp-content/uploads/chup-anh-dep-bang-dien-thoai-25.jpg"
+},
+{
+title: "HTML CSS từ Zero đến Hero",
+description:
+"Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.",
+studentCount: 435735,
+image: "https://nld.mediacdn.vn/thumb_w/540/2020/5/29/doi-hoa-tim-8-15907313395592061395682.png"
+},
+{
+title: "Responsive Với Grid System",
+description:
+"Trong khóa này chúng ta sẽ học về cách xây dựng giao diện web responsive với Grid System, tương tự Bootstrap 4.",
+studentCount: 231225,
+image: "https://nld.mediacdn.vn/2020/5/29/doi-hoa-tim-2-15907313179501820786889.jpg"
+}
+];
+
+
+
+// const Form ={
+// Input(){
+// return <input/>
+// },
+// Checkbox(){
+//     return <input type='checkbox'/>
+
+// }
+// }
+
+// function App(){
+//     const type = 'Input';
+//     const ComponentExample = Form[type];
+//     return (
+//         <div id='wrapper'>
+//            <ComponentExample/>
+
+
+//             </div>
+//         // <button onDoubleClick={(event)=>console.log('New thang ')}>CLICK</button>
+//     )
+// }
+
+// function Button({title,href,onClick}){
+//     let Component = 'button';
+//     const props ={};
+//     if(href){
+//         Component='a';
+//         props.href=href;
+        
+//     }
+//     if(onClick){
+//         props.onClick = onClick;
+//     }
+//     return(
+//         <Component {...props}>{title}</Component>
+//     )
+
+// }
+
+// Viết component Button
+function Button({title,href,onClick}){
+  const props ={};
+  let Component = 'button';
+  if(href){
+    Component ='a';
+    props.href = href;
+  }
+  if(onClick){
+    props.onClick= onClick;
+  }
+  return (
+    <Component {...props}>{title}</Component>
+  )
+  
+}
+
+function App(){
+    return (
+        <div id='wrapper'>
+            <Button
+            title="Click me!"
+            href="https://fullstack.edu.vn/"
+            onClick={()=>console.log(Math.random())}
+            >Click me</ Button>
+
+            </div>
+            // truyền các giá trị props title, href,onClick vào
+    )
+}
+ReactDOM.render(<App/>,document.getElementById('root'));
+</script>
+  </body>
+</html>

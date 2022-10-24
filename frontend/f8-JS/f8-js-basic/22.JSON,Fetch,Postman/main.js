@@ -135,7 +135,7 @@ console.log('Promise chain')
 promise
     .then(
         function () {
-            return new Promise(function (resolver) {
+            return new Promise(function (resolve) {
                 setTimeout(function () {
                     resolve([1, 2, 3])
                 }, 3000)
@@ -149,19 +149,19 @@ promise
 
     .then(
         function (data) {
-            console.log(data);
+            // console.log(data);
             return 2;
         }
     )
     .then(
         function (data) {
-            console.log(data);
+            // console.log(data);
             return 3;
         }
     )
     .then(
         function (data) {
-            console.log(data);
+            // console.log(data);
             return 4;
         }
     )

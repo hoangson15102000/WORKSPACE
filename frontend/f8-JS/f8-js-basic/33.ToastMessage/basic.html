@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast Message</title>
+    <link rel="stylesheet" href="basic.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="main" id="toast"></div>
+    <div class="BTN">
+      <button onclick="showSuccessMessage()" class="btn--1">
+        Show success message
+      </button>
+      <button onclick="showErrorMessage()" class="btn--2">
+        Show error message
+      </button>
+    </div>
+  </body>
+  <script>
+    function toast({ title = "", message = "", type = "", duration = 3000 }) {
+      const main = document.getElementById("toast");
+      if (main) {
+        const toast = document.createElement("div");
+        toast.classList.add("toast", `toast--${type}`);
+        const icons = {
+          success: "fa-solid fa-square-check",
+          info: "fa-sharp fa-solid fa-circle-info",
+          warning: "fa-sharp fa-solid fa-circle-exclamation",
+          error: "fa-sharp fa-solid fa-circle-exclamation",
+        };
+        const icon = icons[type];
+        // Tự động remove
+        // Sau khi hiện thị thì phải xóa đi
+        const autoRemove = setTimeout(function () {
+          main.removeChild(toast);
+        }, duration + 1000);
+        toast.onclick = function (e) {
+          if (e.target.closest(".toast--close")) {
+            main.removeChild(toast);
+            clearTimeout(autoRemove); // clear di cho k bao loi
+          }
+        };
+
+        toast.innerHTML = `<div class="toast__icon"><i class="${icon}"></i></div>
+        <div class="toast__body">
+          <h3>${title}</h3>
+          <p>${message}</p>
+        </div>
+        <div class="toast--close">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+      `; /// toast là 1 thẻ div innerHTMl với nội dung như này
+        main.appendChild(toast);
+      }
+    }
+
+    function showErrorMessage() {
+      toast({
+        title: "Error",
+        message: "Lỗi cmm rồi kia kìa",
+        type: "error",
+        duration: 5000,
+      });
+    }
+    function showSuccessMessage() {
+      toast({
+        title: "Success",
+        message: "Thành công rồi đó ",
+        type: "success",
+        duration: 5000,
+      });
+    }
+  </script>
+</html>

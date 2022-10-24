@@ -10,7 +10,8 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #090707;
+  background: url(./assets/img/backgroundimage.jpeg);
 }
 
 html {
@@ -38,12 +39,13 @@ html {
 
 .dashboard {
   padding: 16px 16px 14px;
-  background-color: #fff;
+  background-color: rgb(229, 202, 202);
   position: fixed;
   top: 0;
   width: 100%;
   max-width: 480px;
   border-bottom: 1px solid #ebebeb;
+  border-radius: 10px;
 }
 
 /* HEADER */
@@ -112,11 +114,12 @@ header h2 {
   width: 100%;
   -webkit-appearance: none;
   height: 6px;
-  background: #d3d3d3;
+  background: #fff;
   outline: none;
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+  border-radius: 5px;
 }
 
 .progress::-webkit-slider-thumb {
@@ -126,6 +129,7 @@ header h2 {
   height: 6px;
   background-color: var(--primary-color);
   cursor: pointer;
+  border-radius: 5px;
 }
 
 /* PLAYLIST */

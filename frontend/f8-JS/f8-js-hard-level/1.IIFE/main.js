@@ -3,12 +3,12 @@
 
 
 (function () {
-               console.log('NOW')
+    console.log('NOW')
 })();
 // nội dung
 // đây là iife
 (function () {
-               console.log('NOW')
+    console.log('NOW')
 })();
 // phải có dấu ; trước nó
 
@@ -18,6 +18,24 @@
 // muốn chạy code ngay :?
 // Khi trong dự án lớn thì hay bị trùng biến global , khi sử dụng IIFE
 // các bạn sẽ nhận thấy viết ra trong IIFE là trong phạm vi đó không lo bị trùng biến nữa.
-// Sử dụng khi muốn che giấu tên hàm tên biến
+// Sử dụng khi muốn che giấu tên hàm tên biến;;
+
+// Viết demo app car
+let appCar = (function () {
+    return {
+        cars: [],
+        add: function (nameCar) {
+            this.cars.push(nameCar);
+        },
+        remove: function (index) {
+            this.cars.splice(index, 1);
+        },
+        modify: function (index, nameNewCar) {
+            this.cars[index] = nameNewCar;
+        }
+    }
+})()
+
+
 
 

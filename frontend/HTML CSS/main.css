@@ -1,0 +1,84 @@
+#header {
+  background: yellow;
+  height: 100px;
+}
+#header img {
+  width: 100vw;
+  height: 100px;
+}
+
+#main_content {
+  background: pink;
+}
+/* menu css */
+#menu {
+  background: #288cc4;
+  height: 30px;
+  overflow: hidden;
+}
+#menu li {
+  list-style: none;
+  float: left;
+}
+#menu li a {
+  display: inline-block;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+}
+#menu li a:hover {
+  color: black;
+  background: #fff;
+}
+
+#list_post {
+  border: solid 1px rgb(39, 38, 38);
+  width: 600px;
+  margin: 0px auto;
+}
+div .post {
+  border: solid 1px #333;
+  margin: 10px 20px;
+  overflow: hidden;
+}
+.post .thumb {
+  float: left;
+  width: 200px;
+}
+.post .thumb img {
+  max-width: 100%;
+  display: inherit;
+}
+.post .infor {
+  margin-left: 220px;
+}
+.post .infor h3 {
+  margin: 15px 0px 20px 0px;
+}
+.post .infor h3 a {
+  font-size: 18px;
+  text-decoration: none;
+  color: blue;
+  text-transform: uppercase;
+}
+
+#footer {
+  background: red;
+  height: 150px;
+}
+#left_sidebar {
+  float: left;
+  width: 100px;
+  height: 400px;
+  background: blue;
+}
+#right_sidebar {
+  float: right;
+  width: 100px;
+  height: 400px;
+  background: orange;
+}
+#content {
+  width: calc(100%-200px);
+  background: #fff;
+}

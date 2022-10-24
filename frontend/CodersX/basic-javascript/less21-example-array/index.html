@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col form-group">
+        <label for="genderFilter">Gender</label>
+        <select name="" id="genderFilter" class="form-control">
+          <option value="null">All</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="list-group" id="userList">
+        <!-- <li class="list-group-item">Tom</li>
+        <li class="list-group-item">Maria</li>
+        <li class="list-group-item">Jason</li>
+        <li class="list-group-item">Sora</li>
+        <li class="list-group-item">Teo</li> -->
+      </div>
+    </div>
+    <style>
+      body {
+        padding: 16px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 16px;
+        font-weight: 800;
+      }
+      .list-group-item {
+        padding: 20px;
+        border: 1px solid rgb(159, 16, 16);
+        border-radius: 15px;
+        list-style: none;
+        background-image: linear-gradient(
+          to right,
+          rgb(192, 168, 168),
+          rgb(214, 99, 99)
+        );
+      }
+      .list-group {
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </body>
+  <script src="main.js"></script>
+</html>

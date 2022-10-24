@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, #4daf54, #3d8880);
+  color: white;
+  font-family: Poppins;
+}
+.card {
+  height: 400px;
+  width: 320px;
+  margin: 120px auto;
+  background-color: #272d40;
+  border-radius: 15px;
+}

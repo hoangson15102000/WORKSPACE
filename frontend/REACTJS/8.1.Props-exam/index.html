@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Props</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+</head>
+  </head>
+  <body><div id="root"></div>
+<script type="text/babel">
+    const Courses = [
+{
+title: "Kiến Thức Nhập Môn IT",
+description:
+"Để có cái nhìn tổng quan về ngành IT - Lập trình web các bạn nên xem các videos tại khóa này trước nhé.",
+studentCount: 56546,
+image: "http://vn.blog.kkday.com/wp-content/uploads/chup-anh-dep-bang-dien-thoai-25.jpg"
+},
+{
+title: "HTML CSS từ Zero đến Hero",
+description:
+"Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.",
+studentCount: 435735,
+image: "https://nld.mediacdn.vn/thumb_w/540/2020/5/29/doi-hoa-tim-8-15907313395592061395682.png"
+},
+{
+title: "Responsive Với Grid System",
+description:
+"Trong khóa này chúng ta sẽ học về cách xây dựng giao diện web responsive với Grid System, tương tự Bootstrap 4.",
+studentCount: 231225,
+image: "https://nld.mediacdn.vn/2020/5/29/doi-hoa-tim-2-15907313179501820786889.jpg"
+}
+];
+// // Cach 1
+// function CourseItem(props){
+//     return (
+//         <div>
+//             <h2>{props.title}</h2>
+//             <img src={props.image} />
+//             <p>{props.description}</p>
+//             <p>{props.studentCount}</p>
+//             </div>
+
+//     )
+// }
+// function App(){
+//     return (
+//         <div id='wrapper'>
+//             {Courses.map(function(course,index){
+//                 return <CourseItem key ={index}
+//                 title={course.title}
+//                 image={course.image}
+//                 description={course.description}
+//                 studentCount={course.studentCount}
+//                 />
+//             })}
+//             </div>
+//     )
+// }
+// Cach 2 destructuring 
+function CourseItem({data,onClick}){
+    // const handleClick = (course)=>{
+    //     console.log(course.title);
+    // }
+    return (
+        <div>
+            <h2 onClick={()=>onClick(data)}>{data.title}</h2>
+            <img width="100%" src={data.image} />
+            <p>{data.description}</p>
+            <p>{data.studentCount}</p>
+            </div>
+
+    )
+}
+function App(){
+    const handleClick=(data)=>{console.log(data.title)};
+    return (
+        <div id='wrapper'>
+            {Courses.map(function(courseAAA,index){
+                return <CourseItem key ={index}
+                
+                data = {courseAAA}
+                onClick={handleClick}
+                 // dat ten props la course bang 1 obj lap qua
+                />
+            })}
+            </div>
+        // <button onDoubleClick={(event)=>console.log('New thang ')}>CLICK</button>
+    )
+}
+ReactDOM.render(<App/>,document.getElementById('root'));
+</script>
+  </body>
+</html>

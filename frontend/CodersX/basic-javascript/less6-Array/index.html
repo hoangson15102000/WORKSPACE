@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commit Git</title>
+  </head>
 
-    <title>Document</title>
-</head>
-
-<body>
-    <script src="main.js"></script>
-</body>
-
+  <body>
+    <ul class="contact-list">
+      Danh sách
+    </ul>
+    <script>
+      var contactElement = document.querySelector(".contact-list");
+      var content = "";
+      var employees = [
+        { name: "Thịnh", age: "29" },
+        { name: "Nam", age: "39" },
+        { name: "Bảo", age: "19" },
+      ];
+      for (var employ of employees) {
+        content += `<li>${employ.name} và ${employ.age} </li>`;
+      }
+      contactElement.innerHTML = content;
+    </script>
+  </body>
+  <!-- <script>
+    var contactElement = document.getElementById("contact-list");
+    var content = "";
+    var employees = [
+      { name: "Thịnh", age: "29" },
+      { name: "Nam", age: "39" },
+      { name: "Bảo", age: "19" },
+    ];
+    for (var employ of employees) {
+      content += `<li>${employ.name} và ${employ.age} </li>`;
+    }
+    contactElement.innerHTML = content;
+  </script> -->
 </html>

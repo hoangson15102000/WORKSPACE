@@ -1,0 +1,40 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.header {
+  background: cyan;
+  height: 100px;
+}
+.menu {
+  background: green;
+  height: 30px;
+}
+.main__content {
+  background: pink;
+  /* overflow: hidden;  */
+  /* Hoặc dùng div rồi clear both */
+}
+.footer {
+  background: red;
+  height: 150px;
+}
+.left-side {
+  float: left;
+  width: 300px;
+  height: 400px;
+  background: blue;
+}
+.right-side {
+  float: right;
+  width: 300px;
+  height: 400px;
+  background: orange;
+}
+.content {
+  margin-left: 300px;
+  margin-right: 300px;
+  height: 300px;
+  background: #fff;
+}

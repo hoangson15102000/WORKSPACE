@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Props</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+</head>
+
+
+<body>
+    <style>
+        button {
+            width: 200px;
+height: 100px;
+font-family: 'Courier New', Courier, monospace;
+border-radius: 10px;
+color: rgb(182, 13, 13);
+font-size: 24px;
+font-weight: 800;
+background: linear-gradient(to right,rgb(206, 210, 201),rgb(2, 203, 206));
+        }
+    </style>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    function Button({children}){
+       
+        return (<button>{children}</button>)
+    }
+    // nội dung trong thẻ Button dưới là 1 children và children cũng chính là 1 prop
+//     function List (){
+//         const cars =['BMW','Mazda','Honda']
+//         return(
+//             <ul>
+// {cars.map(function(item){
+//     return <li> {item}</li>;
+// })}</ul>
+//         )
+//     }
+function List(){
+    const cars =['BMW','Toyota','Honda','Lexus'];
+
+    return (<ul>
+        {cars.map(function(item){
+            return <li>{item}</li>; /// JSX 
+
+        })}
+        </ul>)
+}
+
+        // App.js
+        function App(){
+            
+            return (<div id ="wrapper">
+
+           <Button>Click me ABC</Button>
+<List/>
+                </div>)
+        }
+        /// Render
+        ReactDOM.render(<App/>,document.getElementById('root'));
+
+    </script>
+    
+</body>
+</html>
